@@ -1,5 +1,6 @@
 package mfaudemy;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -34,6 +35,9 @@ public class AppiumBasics {
         AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
 
         // Actual automation
+        // XPath, id, accessibilityId, classname, androidUIAutomator
+
+        driver.findElement(AppiumBy.accessibilityId("Preference")).click();
 
         driver.quit();
         service.stop();
