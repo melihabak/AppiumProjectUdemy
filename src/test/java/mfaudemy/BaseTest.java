@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class BaseTest {
     public AndroidDriver driver;
@@ -34,6 +35,7 @@ public class BaseTest {
         options.setApp("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // It will wait until 10 seconds for element to visible with this line
 
     }
     @AfterClass
