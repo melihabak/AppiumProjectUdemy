@@ -12,7 +12,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseTest {
-
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
     @BeforeClass
