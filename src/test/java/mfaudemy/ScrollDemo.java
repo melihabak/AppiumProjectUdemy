@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class ScrollDemo extends BaseTest{
     @Test
-    public void LongPressGesture() throws InterruptedException {
+    public void ScrollGesture() throws InterruptedException {
 
         driver.findElement(AppiumBy.accessibilityId("Views")).click();
 

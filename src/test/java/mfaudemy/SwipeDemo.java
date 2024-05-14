@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class SwipeDemo extends BaseTest{
     @Test
-    public void LongPressGesture(){
+    public void SwipeGesture(){
 
         driver.findElement(AppiumBy.accessibilityId("Views")).click();
         driver.findElement(AppiumBy.accessibilityId("Gallery")).click();
