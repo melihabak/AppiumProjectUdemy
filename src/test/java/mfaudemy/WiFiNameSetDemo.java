@@ -8,12 +8,13 @@ import java.net.MalformedURLException;
 
 public class WiFiNameSetDemo extends BaseTest{
     @Test
-    public void WiFiSettingsTest() throws MalformedURLException {
+    public void WiFiSettingsTest() throws MalformedURLException, InterruptedException {
 
         // Actual automation
         // XPath, id, accessibilityId, classname, androidUIAutomator
         // tagName = [@attribute='value'] is syntax for XPath
         // Set WiFi
+
         driver.findElement(AppiumBy.accessibilityId("Preference")).click();
         driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click();
         driver.findElement(By.id("android:id/checkbox")).click();
@@ -22,7 +23,7 @@ public class WiFiNameSetDemo extends BaseTest{
         Assert.assertEquals(alertTitle,"WiFi settings");
         driver.findElement(By.id("android:id/edit")).sendKeys("mfa");
         driver.findElement(By.id("android:id/button1")).click();
-        //driver.findElement();
+        Thread.sleep(2000);
 
     }
 }

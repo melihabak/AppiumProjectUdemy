@@ -1,8 +1,6 @@
 package mfaudemy;
 
-import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 public class ScrollDemo extends BaseTest{
@@ -40,7 +38,6 @@ public class ScrollDemo extends BaseTest{
         */
 
         scrollToEndAction();
-
         Thread.sleep(2000);
 
     }

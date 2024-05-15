@@ -28,12 +28,12 @@ public class LongPress extends BaseTest{
         // Bu iki kod satiri BaseTest sinifinda metod olarak tanimlandi ve tekrar tekrar kod yaziminin onune gecildi
 
         longPressAction(ele);
-
         Thread.sleep(2000);
 
         String menuText = driver.findElement(By.id("android:id/title")).getText();
         Assert.assertEquals(menuText,"Sample menu");
         Assert.assertTrue(driver.findElement(By.id("android:id/title")).isDisplayed());
+        Thread.sleep(2000);
 
     }
 }

@@ -11,7 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,13 +35,14 @@ public class BaseTest {
         service.start();
 
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setDeviceName("emulator-5554"); // Real Device or Emulator
+        //options.setDeviceName("emulator-5554"); // Emulator
+        options.setDeviceName("R68R9042DXV"); // Real Device
         options.setApp("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // It will wait until 10 seconds for element to visible with this line
 
     }
+
     public void longPressAction(WebElement ele)
     {
         ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
@@ -71,6 +71,7 @@ public class BaseTest {
                 "percent", 0.75
         ));
     }
+
     public void dragDropAction(WebElement ele,int endX,int endY){
         ((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) ele).getId(),
@@ -78,6 +79,7 @@ public class BaseTest {
                 "endY", endY
         ));
     }
+
     @AfterClass
     public void tearDown(){
         driver.quit();

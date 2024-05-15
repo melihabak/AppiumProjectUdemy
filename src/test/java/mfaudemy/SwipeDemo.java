@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class SwipeDemo extends BaseTest{
     @Test
-    public void SwipeGesture(){
+    public void SwipeGesture() throws InterruptedException {
 
         driver.findElement(AppiumBy.accessibilityId("Views")).click();
         driver.findElement(AppiumBy.accessibilityId("Gallery")).click();
@@ -36,8 +36,8 @@ public class SwipeDemo extends BaseTest{
          */
 
         swipeAction(firstImage,"left");
-
         Assert.assertEquals(firstImage.getAttribute("focusable"),"false");
+        Thread.sleep(2000);
 
     }
 }
