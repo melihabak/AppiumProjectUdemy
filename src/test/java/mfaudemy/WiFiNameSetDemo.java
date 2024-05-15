@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 
-public class AppiumBasics extends BaseTest{
+public class WiFiNameSetDemo extends BaseTest{
     @Test
     public void WiFiSettingsTest() throws MalformedURLException {
 
