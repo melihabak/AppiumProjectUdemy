@@ -80,6 +80,11 @@ public class BaseTest {
                 "endY", endY
         ));
     }
+    public Double getFormattedAmount(String amount)
+    {
+        Double price = Double.parseDouble(amount.substring(1));
+        return price;
+    }
 
     @AfterClass
     public void tearDown(){
