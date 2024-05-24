@@ -4,6 +4,11 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+
+import com.google.common.collect.ImmutableMap;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import io.appium.java_client.android.AndroidDriver;
@@ -24,11 +29,13 @@ public class BrowserBaseTest {
 
         UiAutomator2Options options = new UiAutomator2Options();
 
-        options.setDeviceName("emulator-5554"); // Emulator
-        //options.setDeviceName("R68R9042DXV"); // Real Device
+        //options.setDeviceName("emulator-5554"); // Emulator
+        options.setDeviceName("R68R9042DXV"); // Real Device
 
-        options.setChromedriverExecutable("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\chromedriver.exe");//chromedriver for suitable each emulator version.
-        // Every different emulator maybe have different chrome driver version!!!
+        options.setChromedriverExecutable("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\chromedriver.exe");
+        //chromedriver for suitable each emulator version. Every different emulator maybe have different chrome driver version!!!
+
+        options.setApp("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\General-Store.apk");
 
         options.setCapability("browserName", "Chrome");
 
@@ -40,6 +47,12 @@ public class BrowserBaseTest {
     {
         Double price = Double.parseDouble(amount.substring(1));
         return price;
+    }
+
+    public void longPressAction(WebElement ele)
+    {
+        ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
+                ImmutableMap.of("elementId",((RemoteWebElement) ele).getId(),"duration",2000));
     }
 
     @AfterClass

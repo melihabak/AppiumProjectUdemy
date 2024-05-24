@@ -37,7 +37,7 @@ public class BaseTest {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("emulator-5554"); // Emulator
         //options.setDeviceName("R68R9042DXV"); // Real Device
-        options.setApp("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+        //options.setApp("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\ApiDemos-debug.apk");
         options.setApp("C:\\Users\\melih.abak\\Desktop\\AppiumProjectUdemy\\src\\test\\java\\resources\\General-Store.apk");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // It will wait until 10 seconds for element to visible with this line
