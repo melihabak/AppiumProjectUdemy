@@ -16,7 +16,5 @@ public class MobileBrowserTest2 extends BrowserBaseTest{
         String text = driver.findElement(By.xpath("//a[contains(text(),'Devops')]")).getText();
         Assert.assertEquals(text, "Devops");
 
-
     }
-
 }
