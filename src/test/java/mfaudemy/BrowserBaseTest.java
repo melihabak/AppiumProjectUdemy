@@ -29,11 +29,11 @@ public class BrowserBaseTest {
 
         UiAutomator2Options options = new UiAutomator2Options();
 
-        //options.setDeviceName("emulator-5554"); // Emulator
-        options.setDeviceName("R68R9042DXV"); // Real Device
+        options.setDeviceName("emulator-5554"); // Emulator
+        //options.setDeviceName("R68R9042DXV"); // Real Device
 
-        options.setChromedriverExecutable("C:\\Users\\melih.abak\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"); //real device
-        //chromedriver for suitable each emulator version. Every different emulator maybe have different chrome driver version!!!
+        //options.setChromedriverExecutable("C:\\Users\\melih.abak\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"); //real device
+        //-chromedriver for suitable each emulator version. Every different emulator maybe have different chrome driver version!!!
 
         options.setCapability("browserName", "Chrome");
 
